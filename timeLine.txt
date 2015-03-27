@@ -1,0 +1,11 @@
+TimeLine 10 days until project is due
+
+Milestone 1 - BareBones TicTacToe Game 4 days
+Milestone 2 - Hookup backend 3 days
+Milestone 3 - Style/add on wish list items 2 days
+Test/debug - 1 day
+
+If backend lectures are not ready, can start work on milestone 3 until backend knowledge is ready.
+
+
+

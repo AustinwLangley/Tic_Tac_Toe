@@ -1,0 +1,4 @@
+Use NG Repeat for board
+Set up squares as objects for back end (firebase)
+
+

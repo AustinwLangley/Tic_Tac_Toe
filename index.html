@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="js/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/TictactoeController.js"></script>
 </head>
-<body>
-
+<body ng-app="tictactoeApp">
+<h1>Tic Tac Toe</h1>
+	<div class="board" ng-controller="TictactoeController as tictactoe">
+			<section class = "board-layout"> 
+		  	<ul> 
+		  		<li ng-repeat="tictac in tictactoe.tictactoeboard"> 
+		  			<span>{{tictac.space}}</span> 
+		  		</li>
+		  	</ul>
+		  	</section>
+	</div>
 </body>
 </html>
