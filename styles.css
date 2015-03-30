@@ -8,22 +8,20 @@ h1{
 	font-size: 16;
 }
 
-.board {
-width: 400px;
-height: 400px;
+#board {
+width: 600px;
+height: 600px;
 background-color: gray;
 margin: auto;
-background-color: transparent;
+border: 1px solid black;
+
 }
 
 .square {
-width: 125px;
-height: 125px;
+width: 197px;
+height: 197px;
 background-color: white;
 border: 1px solid black;
 display: inline-block;
-vertical-align: top;
-background-color: ;
-margin: 1.5px 
 
 }
