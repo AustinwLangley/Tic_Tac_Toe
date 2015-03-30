@@ -6,8 +6,8 @@
 </head>
 <body ng-controller="TictactoeController as tictactoe" >
 <h1>Tic Tac Toe</h1>
-	<div id = "board">
-		<div class="square" ng-repeat="t in tictactoe.tictactoeBoard" ng-click="tictactoe.playerMove">	
+	<div id="board">
+		<div class="square" ng-repeat="t in tictactoe.tictactoeBoard" ng-click="tictactoe.playerMove($index)">	
 			<img ng-src={{t.image}} ng-show="t.hasPlayer">
 		</div>
 	</div>

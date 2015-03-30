@@ -22,35 +22,32 @@ angular
       	self.playerTwoTurn = playerTwoTurn;
       	self.playerMove = playerMove
 	
-    //Starts the game  	
-	gameInit();
+    	//Starts the game  	
+		gameInit();
 
-	function gameInit() {
-	
-		function playerMove(playerTurn){
-			if (playerTurn === "one"){
-				playerOneTurn();
-			}
+		function gameInit() {
+		
+			function playerMove(playerTurn, $index){
+				if (playerTurn === "one"){
+					playerOneTurn($index);
+				}
+				else {
+					playerTwoTurn($index);
+				}
+			};
+			function playerOneTurn($index){
+				if (hasPlayer === false){
+					self.tictactoeBoard[$index].image= "./TicTacToe_Images/x.png"  
+					playerTurn ="two";
+				}
+			};
+			function playerTwoTurn($index){
+				if (hasPlayer === false){
+					self.tictactoeBoard[$index].image= "./TicTacToe_Images/o.png" 
+					playerTurn = "one"
+				}			
+			}; 
 
-			else {
-				playerTwoTurn();
-			}
-		}
+		}; //end of function gameInit
 
-		function playerOneTurn(){
-			if (hasPlayer === false){
-				self.tictactoeBoard[].image= "./TicTacToe_Images/x.png"  
-				playerTurn ="two";
-			}
-		};
-
-		function playerTwoTurn(){
-			if (hasPlayer === false){
-				self.tictactoeBoard[].image= "./TicTacToe_Images/o.png" 
-				playerTurn = "one"
-			}			
-		}; 
-
-	} //end of function gameInit
-
-} //close TictactoeController	
+}; //close TictactoeController	
