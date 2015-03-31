@@ -4,7 +4,7 @@ angular
 
     function TictactoeController(){
         var self = this;
-        var playerTurn = "one"
+        var playerTurn = "one";
 
         self.tictactoeBoard = [  {image: "" , hasPlayer: false},  
 	      						 {image: "" , hasPlayer: false},
@@ -17,37 +17,35 @@ angular
 	      					     {image: "" , hasPlayer: false}
       	];
 
-      	self.gameInit = gameInit
       	self.playerOneTurn = playerOneTurn;
       	self.playerTwoTurn = playerTwoTurn;
-      	self.playerMove = playerMove
-	
-    	//Starts the game  	
-		gameInit();
+      	self.playerMove = playerMove;
 
-		function gameInit() {
-		
-			function playerMove(playerTurn, $index){
+			function playerMove($index){
+
 				if (playerTurn === "one"){
 					playerOneTurn($index);
 				}
 				else {
 					playerTwoTurn($index);
+					
 				}
 			};
 			function playerOneTurn($index){
-				if (hasPlayer === false){
-					self.tictactoeBoard[$index].image= "./TicTacToe_Images/x.png"  
-					playerTurn ="two";
+				if (self.tictactoeBoard[$index].hasPlayer === false){
+					self.tictactoeBoard[$index].image = "./Tic_Tac_Toe_Images/x.png"  
+					self.tictactoeBoard[$index].hasPlayer = true;
+					playerTurn = "two";
+					return playerTurn;
 				}
 			};
 			function playerTwoTurn($index){
-				if (hasPlayer === false){
-					self.tictactoeBoard[$index].image= "./TicTacToe_Images/o.png" 
+				if (self.tictactoeBoard[$index].hasPlayer === false){
+					self.tictactoeBoard[$index].image= "./Tic_Tac_Toe_Images/o.png" 
+					self.tictactoeBoard[$index].hasPlayer = true;
 					playerTurn = "one"
+					return playerTurn;
 				}			
 			}; 
-
-		}; //end of function gameInit
 
 }; //close TictactoeController	
