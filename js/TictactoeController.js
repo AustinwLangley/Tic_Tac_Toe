@@ -5,7 +5,8 @@ angular
     function TictactoeController(){
         var self = this;
         var playerTurn = "one";
-        var winner;
+        self.winner;
+
 
         self.tictactoeBoard = [  {image: "", hasPlayer: false, playerOne: false, playerTwo: false},  
 	      						 {image: "", hasPlayer: false, playerOne: false, playerTwo: false},
@@ -23,13 +24,11 @@ angular
       	self.playerMove = playerMove;
 
 			function playerMove($index){
-
 				if (playerTurn === "one"){
 					playerOneTurn($index);
 				}
 				else {
 					playerTwoTurn($index);
-					
 				}
 			};
 			function playerOneTurn($index){
@@ -39,7 +38,6 @@ angular
 					self.tictactoeBoard[$index].playerOne = true;
 					playerTurn = "two";
 					winnerCheck();
-
 					return playerTurn;
 				}
 			};
@@ -53,87 +51,87 @@ angular
 					return playerTurn;
 				}			
 			}; 
-
 			function winnerCheck(){
-				if (self.tictactoeBoard[0].playerOne === true && self.tictactoeBoard[1].playerOne === true && self.tictactoeBoard[2].playerOne === true){
-					winner = "one";
-					console.log(winner);
+				if (self.tictactoeBoard[0].playerOne === true && self.tictactoeBoard[1].playerOne === true && self.tictactoeBoard[2].playerOne === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two")
+				{
+					self.winner = "The Winner is player one";
 				}
 				if 
-				   (self.tictactoeBoard[3].playerOne === true && self.tictactoeBoard[4].playerOne === true && self.tictactoeBoard[5].playerOne === true){
-					winner = "one";
-					console.log(winner);
+				   (self.tictactoeBoard[3].playerOne === true && self.tictactoeBoard[4].playerOne === true &&self.tictactoeBoard[5].playerOne === true && self.winner!== "The Winner is player one" && self.winner !== "The Winner is player two")
+				{
+					self.winner = "The Winner is player one";
 				}
 				if 	
-					(self.tictactoeBoard[6].playerOne === true && self.tictactoeBoard[7].playerOne === true && self.tictactoeBoard[8].playerOne === true){
-					winner = "one";
-					console.log(winner);
+					(self.tictactoeBoard[6].playerOne === true && self.tictactoeBoard[7].playerOne === true && self.tictactoeBoard[8].playerOne === true && self.winner!== "The Winner is player one" && self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player one";
 				}
 				if 	
-					(self.tictactoeBoard[0].playerOne === true && self.tictactoeBoard[3].playerOne === true && self.tictactoeBoard[6].playerOne === true){
-					winner = "one";
-					console.log(winner);
+					(self.tictactoeBoard[0].playerOne === true && self.tictactoeBoard[3].playerOne === true && self.tictactoeBoard[6].playerOne === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player one";
 				}
 				if 	
-					(self.tictactoeBoard[1].playerOne === true && self.tictactoeBoard[4].playerOne === true && self.tictactoeBoard[7].playerOne === true){
-					winner = "one";
-					console.log(winner);
+					(self.tictactoeBoard[1].playerOne === true && self.tictactoeBoard[4].playerOne === true && self.tictactoeBoard[7].playerOne === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player one";
 				}
 				if 	
-					(self.tictactoeBoard[2].playerOne === true && self.tictactoeBoard[5].playerOne === true && self.tictactoeBoard[8].playerOne === true){
-					winner = "one";
-					console.log(winner);
+					(self.tictactoeBoard[2].playerOne === true && self.tictactoeBoard[5].playerOne === true && self.tictactoeBoard[8].playerOne === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player one";
 				}
 				if 	
-					(self.tictactoeBoard[0].playerOne === true && self.tictactoeBoard[4].playerOne === true && self.tictactoeBoard[8].playerOne === true){
-					winner = "one";
-					console.log(winner);
+					(self.tictactoeBoard[0].playerOne === true && self.tictactoeBoard[4].playerOne === true && self.tictactoeBoard[8].playerOne === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player one";
 				}
 				if 	
-					(self.tictactoeBoard[6].playerOne === true && self.tictactoeBoard[4].playerOne === true && self.tictactoeBoard[2].playerOne === true){
-					winner = "one";
-					console.log(winner);
+					(self.tictactoeBoard[6].playerOne === true && self.tictactoeBoard[4].playerOne === true && self.tictactoeBoard[2].playerOne === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player one";
 				}
 
 
-				if (self.tictactoeBoard[0].playerTwo === true && self.tictactoeBoard[1].playerTwo === true && self.tictactoeBoard[2].playerTwo === true){
-					winner = "two";
-					console.log(winner);
+				if (self.tictactoeBoard[0].playerTwo === true && self.tictactoeBoard[1].playerTwo === true && self.tictactoeBoard[2].playerTwo === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player two";
 				}
 				if 
-				   (self.tictactoeBoard[3].playerTwo === true && self.tictactoeBoard[4].playerTwo === true && self.tictactoeBoard[5].playerTwo === true){
-					winner = "two";
-					console.log(winner);
+				   (self.tictactoeBoard[3].playerTwo === true && self.tictactoeBoard[4].playerTwo === true && self.tictactoeBoard[5].playerTwo === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player two";
 				}
 				if 	
-					(self.tictactoeBoard[6].playerTwo === true && self.tictactoeBoard[7].playerTwo === true && self.tictactoeBoard[8].playerTwo === true){
-					winner = "two";
-					console.log(winner);
+					(self.tictactoeBoard[6].playerTwo === true && self.tictactoeBoard[7].playerTwo === true && self.tictactoeBoard[8].playerTwo === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player two";
+
 				}
 				if 	
-					(self.tictactoeBoard[0].playerTwo === true && self.tictactoeBoard[3].playerTwo === true && self.tictactoeBoard[6].playerTwo === true){
-					winner = "two";
-					console.log(winner);
+					(self.tictactoeBoard[0].playerTwo === true && self.tictactoeBoard[3].playerTwo === true && self.tictactoeBoard[6].playerTwo === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player two";
 				}
 				if 	
-					(self.tictactoeBoard[1].playerTwo === true && self.tictactoeBoard[4].playerTwo === true && self.tictactoeBoard[7].playerTwo === true){
-					winner = "two";
-					console.log(winner);
+					(self.tictactoeBoard[1].playerTwo === true && self.tictactoeBoard[4].playerTwo === true && self.tictactoeBoard[7].playerTwo === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player two";
 				}
 				if 	
-					(self.tictactoeBoard[2].playerTwo === true && self.tictactoeBoard[5].playerTwo === true && self.tictactoeBoard[8].playerTwo === true){
-					winner = "two";
-					console.log(winner);
+					(self.tictactoeBoard[2].playerTwo === true && self.tictactoeBoard[5].playerTwo === true && self.tictactoeBoard[8].playerTwo === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player two";
 				}
 				if 	
-					(self.tictactoeBoard[0].playerTwo === true && self.tictactoeBoard[4].playerTwo === true && self.tictactoeBoard[8].playerTwo === true){
-					winner = "two";
-					console.log(winner);
+					(self.tictactoeBoard[0].playerTwo === true && self.tictactoeBoard[4].playerTwo === true && self.tictactoeBoard[8].playerTwo === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player two";
 				}
 				if 	
-					(self.tictactoeBoard[6].playerTwo === true && self.tictactoeBoard[4].playerTwo === true && self.tictactoeBoard[2].playerTwo === true){
-					winner = "two";
-					console.log(winner);
+					(self.tictactoeBoard[6].playerTwo === true && self.tictactoeBoard[4].playerTwo === true && self.tictactoeBoard[2].playerTwo === true && self.winner!== "The Winner is player one" &&
+					self.winner !== "The Winner is player two"){
+					self.winner = "The Winner is player two";
 				}
 
 				if ((self.tictactoeBoard[0].hasPlayer === true) &&
@@ -145,13 +143,11 @@ angular
 					(self.tictactoeBoard[6].hasPlayer === true) && 
 					(self.tictactoeBoard[7].hasPlayer === true) &&
 					(self.tictactoeBoard[8].hasPlayer === true) &&
-					(winner !== "one") &&
-					(winner !== "two")){
-					winner = "cat";
-					console.log(winner);
+					(self.winner !== "The Winner is player one") &&
+					(self.winner !== "The Winner is player two")){
+					self.winner = "Cat's game";
 				}
-			} //close winner function
-
+			} //close winnerCheck function
 }; //close TictactoeController	
 
 
